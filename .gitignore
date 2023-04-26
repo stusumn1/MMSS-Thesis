@@ -1,0 +1,23 @@
+# R and RStudio files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# ignore dataset if too large (>100 MB)
+# specify pathway to dataset data/project_dataset.csv
+data/*.csv
+data/*.rda
+
+# files too large for GitHub
+data/raw/census_2011.csv
+data/raw/census_2016.xlsx
+data/raw/census_2021.csv
+data/raw/*.CSV
+
+# mac related files
+.DS_Store
+**/.DS_Store
+
+# to find large files, enter the following in terminal
+  # find . -size +1G | sed 's|^\./||g' | cat >> .gitignore; awk '!NF || !seen[$0]++' .gitignore

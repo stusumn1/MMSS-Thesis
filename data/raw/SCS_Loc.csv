@@ -1,0 +1,47 @@
+Province,City,Name,Address,Approval Date,Expiry Date,Authorized Service1,Authorized Service2,Authorized Service3,Authorized Service4,Authorized Service5,Authorized Service6
+Alberta,Calgary,Sheldon M. Chumir Health Centre,1213 4th St SW,2020-01-31T00:00:00Z,2023-01-31T00:00:00Z,Injection,Intranasal,Oral,NA,NA,NA
+Alberta,Edmonton,Boyle McCauley Health Centre,10628 96th St,2022-06-17T00:00:00Z,2025-06-30T00:00:00Z,Injection,Intranasal,Oral,Peer assistance,NA,NA
+Alberta,Edmonton,George Spady Centre Society,10015 105A Ave NW,2022-04-29T00:00:00Z,2027-04-30T00:00:00Z,Injection,Intranasal,Oral,Peer assistance,NA,NA
+Alberta,Edmonton,Royal Alexandra Hospital,10240 Kingsway Ave,2022-03-25T00:00:00Z,2027-03-31T00:00:00Z,Injection,Intranasal,Oral,NA,NA,NA
+Alberta,Grande Prairie,Northreach Mobile Supervised Consumption Service,10101 97A St,2020-02-28T00:00:00Z,2023-02-28T00:00:00Z,Injection,Intranasal,Oral,NA,NA,NA
+British Columbia,Vancouver,Dr. Peter Centre,1110 Comox St,2022-01-28T00:00:00Z,2025-01-31T00:00:00Z,Injection,NA,NA,NA,NA,NA
+British Columbia,Vancouver,Hope 2 Health,611 Powell St,2021-09-24T00:00:00Z,2024-09-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,NA,NA
+British Columbia,Vancouver,Insite,139 East Hastings St,2020-03-31T00:00:00Z,2023-03-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,NA,NA
+British Columbia,Victoria,The Harbour Supervised Consumption Service,941A Pandora Ave,2022-06-24T00:00:00Z,2023-06-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Greater Sudbury,Réseau ACCESS Network - Energy Court,24 Energy Crt,2022-05-13T00:00:00Z,2025-05-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Guelph,Guelph Community Health Centre,76 Wyndham St N,2020-01-31T00:00:00Z,2023-01-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Hamilton,Hamilton Urban Core Community Health Centre (interim site),70 James St S,2022-11-25T00:00:00Z,2024-03-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Kingston,Integrated Care Hub,661 Montreal St,2022-10-28T00:00:00Z,2025-10-31T00:00:00Z,Injection,Intranasal,Oral,Peer assistance,NA,NA
+Ontario,Kitchener,Supervised Consumption Site - Kitchener,150 Duke St W,2021-10-22T00:00:00Z,2024-10-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,London,Carepoint Consumption and Treatment Interim Trailer,446 York St,2020-05-31T00:00:00Z,2023-03-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Ottawa,Healthy Sexuality and Risk Reduction Unit,179 Clarence St,2022-09-16T00:00:00Z,2025-09-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,NA,NA
+Ontario,Ottawa,Sandy Hill Community Health Centre,221 Nelson St,2022-04-29T00:00:00Z,2025-04-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Ottawa,Somerset West Community Health Centre,55 Eccles St,2022-06-17T00:00:00Z,2025-06-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Ottawa,Trailer 2.0,256 King Edward Ave,2021-09-27T00:00:00Z,2024-09-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Peterborough,Peterborough CTS,220 Simcoe St,2022-05-25T00:00:00Z,2025-05-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,St. Catharines,StreetWorks Supervised Consumption Site,105 Queenston St,2020-09-25T00:00:00Z,2023-09-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Thunder Bay,PATH525,525 Simpson St,2020-03-31T00:00:00Z,2023-03-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,NA,NA
+Ontario,Toronto,Casey House DHP Supervised Consumption Services,119 Isabella St,2022-05-25T00:00:00Z,2025-05-31T00:00:00Z,Drug checking,Inhalation,Injection,Intranasal,Oral,NA
+Ontario,Toronto,Casey House Inpatient Supervised Consumption Services,119 Isabella St,2022-05-25T00:00:00Z,2025-05-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,NA,NA
+Ontario,Toronto,Fred Victor Centre,145 Queen St E,2022-02-25T00:00:00Z,2025-02-28T00:00:00Z,Injection,Intranasal,Oral,Peer assistance,NA,NA
+Ontario,Toronto,Kensington Market Overdose Prevention Service,260 Augusta Ave,2022-11-25T00:00:00Z,2025-11-30T00:00:00Z,Injection,Intranasal,Oral,Peer assistance,NA,NA
+Ontario,Toronto,Moss Park Consumption & Treatment Service,134 Sherbourne St,2020-01-31T00:00:00Z,2023-01-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Toronto,Parkdale Queen West Community Health Centre,168 Bathurst St,2022-03-16T00:00:00Z,2025-03-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Toronto,Parkdale Supervised Consumption Service,1229 Queen St W,2020-03-31T00:00:00Z,2023-03-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Toronto,Regent Park Community Health Centre Consumption and Treatment Service,465 Dundas St E,2020-01-31T00:00:00Z,2023-01-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Toronto,South Riverdale Community Health Centre,955 Queen St E,2021-11-26T00:00:00Z,2024-11-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Toronto,Street Health,338 Dundas St E,2022-03-25T00:00:00Z,2023-03-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Toronto,The Works,277 Victoria St,2021-10-29T00:00:00Z,2024-10-31T00:00:00Z,Drug checking,Injection,NA,NA,NA,NA
+Quebec,Montreal,CACTUS Montreal – SCS – Berger site,1244 Berger St,2021-06-24T00:00:00Z,2024-06-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Quebec,Montreal,Dopamine,4205 Ontario St E,2021-06-24T00:00:00Z,2024-06-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Quebec,Montreal,Anonyme Mobile Supervised Consumption Service (SCS) (Anonyme M.I.U.),Island of Montreal,2021-06-24T00:00:00Z,2024-06-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Quebec,Montreal,Spectre de rue,1278 Ontario St E,2021-11-26T00:00:00Z,2024-11-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Saskatchewan,Saskatoon,PHR,1516 20th St W,2022-03-25T00:00:00Z,2023-03-31T00:00:00Z,Drug checking,Inhalation,Injection,Intranasal,Oral,NA
+British Columbia,Kamloops,Kamloops Mobile Site,569 Seymour St,2021-07-30T00:00:00Z,2024-07-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,NA,NA
+British Columbia,Surrey,SafePoint,13455 107A Ave,2021-06-24T00:00:00Z,2024-06-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+British Columbia,Vancouver,Lookout Society - Powell Street Getaway,528 Powell St,2021-07-30T00:00:00Z,2024-07-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,NA,NA
+British Columbia,Victoria,Johnson Street Community - Safe Consumption Site,844 Johnson St,2021-12-30T00:00:00Z,2022-12-31T00:00:00Z,Drug checking,Injection,NA,NA,NA,NA
+Ontario,Barrie,CMHA SCB – Consumption and Treatment Service,940-80 Bradford St,2022-09-09T00:00:00Z,2023-09-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,NA,NA
+Ontario,Hamilton,Hamilton Urban Core Community Health Centre,430 Cannon St E,2022-03-15T00:00:00Z,2024-03-31T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
+Ontario,Kingston,Street Health Centre,115 Barrack St,2020-01-31T00:00:00Z,2023-01-31T00:00:00Z,Injection,Intranasal,Oral,NA,NA,NA
+Ontario,London,Carepoint,446 York St,2022-11-25T00:00:00Z,2025-11-30T00:00:00Z,Drug checking,Injection,Intranasal,Oral,Peer assistance,NA
