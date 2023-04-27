@@ -178,31 +178,41 @@ fortstjohn <- rvest::read_html("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/d
 whitehorse <- rvest::read_html("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=2&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID=1118463&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0")
 yellowknife <- rvest::read_html("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=2&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID=1118464&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0")
 
-pages <- ls()
 
 ## for loop
 url1 <- "https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID="
-  
-  1118464
+  gid <- seq(1118297:1118464)
 url2 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0"
-gid <- seq(1118296:1118464)
-gid <- 1118297
-download <- "File.cfm?S=0&amp;LANG=E&amp;A=R&amp;PID=105611&amp;GID=1118464&amp;D1=0&amp;D2=0&amp;D3=0&amp;D4=0&amp;D5=0&amp;D6=0&amp;OFT=CSV"
-link <- paste0(url1, gid, url2)
-table <- tibble("gid" = vector(length = 0), "link" = vector(length = 0))
+test_link
+gid <- seq(from = 1118297, to = 1118464)
+table <- tibble("gid" = vector(length = 0, mode = "numeric"), "link" = vector(length = 0, mode = "character"))
 
 for(i in gid) {
-  link <- paste0(url1, gid, url2)
-  html <- read_html("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=35&GL=-1&GID=1118313&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0")
-  output <- html %>% html_elements("li a") %>% html_attr("href") %>% 
-    str_subset(pattern = "CSV$") %>% 
-    unlist()
-  
+  link <- paste0(url1, i, url2)
+  html <- read_html(link)
+  download <- html %>% html_elements("li a") %>% html_attr("href") %>% 
+    str_subset(pattern = "CSV$")
+  output <- tibble("gid" = i, "link" = download)
   table <- bind_rows(table, output)
 }
 here()
 
+html_session(url = "File.cfm?S=0&amp;LANG=E&amp;A=R&amp;PID=105611&amp;GID=1118302&amp;D1=0&amp;D2=0&amp;D3=0&amp;D4=0&amp;D5=0&amp;D6=0&amp;OFT=CSV")
+session_follow_link("File.cfm?S=0&amp;LANG=E&amp;A=R&amp;PID=105611&amp;GID=1118302&amp;D1=0&amp;D2=0&amp;D3=0&amp;D4=0&amp;D5=0&amp;D6=0&amp;OFT=CSV")
+
+test_link <- table[1, 2]
+download.file(test_link)
+download.file(url = as.character(test_link), destfile = "scraping/data.rda")
+download.file("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/File.cfm?S=0&amp;LANG=E&amp;A=R&amp;PID=105611&amp;GID=1118295&amp;D1=0&amp;D2=0&amp;D3=0&amp;D4=0&amp;D5=0&amp;D6=0&amp;OFT=CSV", "temp")
+
 # set up empty directory (look up), download file, read_csv, delete the file
+
+rvest::session_follow_link(as.character(test_link))
+
+temp = table[2]
+for (i in 1:length(temp)) {
+  assign(temp[i], download.file(temp[i]))
+}
 
 for(i in gid) {
   link <- paste0(url1, i, url2)
