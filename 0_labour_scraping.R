@@ -179,8 +179,50 @@ whitehorse <- rvest::read_html("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/d
 yellowknife <- rvest::read_html("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=2&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID=1118464&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0")
 
 pages <- ls()
+
+## for loop
+url1 <- "https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID="
+  
+  1118464
+url2 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0"
+gid <- seq(1118296:1118464)
+gid <- 1118297
+download <- "File.cfm?S=0&amp;LANG=E&amp;A=R&amp;PID=105611&amp;GID=1118464&amp;D1=0&amp;D2=0&amp;D3=0&amp;D4=0&amp;D5=0&amp;D6=0&amp;OFT=CSV"
+link <- paste0(url1, gid, url2)
+table <- tibble("gid" = vector(length = 0), "link" = vector(length = 0))
+
+for(i in gid) {
+  link <- paste0(url1, gid, url2)
+  html <- read_html("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=35&GL=-1&GID=1118313&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0")
+  output <- html %>% html_elements("li a") %>% html_attr("href") %>% 
+    str_subset(pattern = "CSV$") %>% 
+    unlist()
+  
+  table <- bind_rows(table, output)
+}
+here()
+
+# set up empty directory (look up), download file, read_csv, delete the file
+
+for(i in gid) {
+  link <- paste0(url1, i, url2)
+  html <- rvest::read_html(link)
+  html_nodes <- html %>% html_elements("li a") %>% 
+    html_attr("href")
+  
+  return(html_nodes)
+}
+
 download_link <- rvest::html_elements("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID=1118296&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0")
-?html_nodes
+
+html2 <- read_html("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=35&GL=-1&GID=1118313&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0")
+output <- html2 %>% html_elements("li a") %>% html_attr("href") %>% 
+  str_subset(pattern = "CSV$") %>% 
+  return()
+
+# create data frame with two columns, GID and link
+tibble(gid = i, link = output)
+
 ## extract tables
 for (page in pages) {
   
