@@ -31,9 +31,9 @@ for(i in gid) {
 dir <- here(paste0("temp/"))
 dir.create(dir)
   # create empty table
-table2 <- tibble("geo" = vector(length = 0, mode = "character"), "total" = vector(length = 0, mode = "character"), "in labour force" = vector(length = 0, mode = "character"),
-                 "employed" = vector(length = 0, mode = "character"), "unemployed" = vector(length = 0, mode = "character"), "not in labour force" = vector(length = 0, mode = "character"),
-                 "participation_rate" = vector(length = 0, mode = "character"), "employment_rate" = vector(length = 0, mode = "character"))
+table2 <- tibble("V1" = vector(length = 0, mode = "character"), "V2" = vector(length = 0, mode = "character"), "V3" = vector(length = 0, mode = "character"),
+                 "V4" = vector(length = 0, mode = "character"), "V5" = vector(length = 0, mode = "character"), "V6" = vector(length = 0, mode = "character"),
+                 "V7" = vector(length = 0, mode = "character"), "V8" = vector(length = 0, mode = "character"))
 gid <- table$gid
 links <- table[,2]
   # download each file to new directory
@@ -78,3 +78,18 @@ colnames <- c("geo_name", "total", "in_labor_force", "employed", "unemployed", "
 
 labor_2011 <- values
 colnames(labor_2011) <- colnames
+#rename(labor_2011, geo_name = `geo_name[,1]`)
+  # not working
+labor_2011$year <-  2011
+labor_2011 <- labor_2011 %>% 
+  select(year, everything())
+labor_2011 <- labor_2011 %>% 
+  mutate(
+    total = as.numeric(total),
+    in_labor_force = as.numeric(in_labor_force),
+    employed = as.numeric(employed),
+    unemployed = as.numeric(unemployed),
+    not_in_labor_force = as.numeric(not_in_labor_force),
+    participation_rate = as.numeric(participation_rate),
+    unemployment_rate = as.numeric(unemployment_rate)
+  )
