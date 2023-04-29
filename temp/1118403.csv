@@ -2,28 +2,28 @@
 "Geography = Thunder Bay"
 "Global non-response rate (GNR) [1] =  25.6 %"
 "Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
-"Highest certificate, diploma or degree (7) = Total - Highest certificate, diploma or degree [2]"
+"Highest certificate, diploma or degree (7) =   High school diploma or equivalent [2]"
 "Age groups (13B) = Total - Age groups"
 "Sex (3) = Total - Sex"
 "Visible minority (15)","Total - Labour force status [3]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
-"Total - Population by visible minority",101100,62685,57430,5255,38415,62.0,56.8,8.4 
-"  Total visible minority population [4]",2840,1965,1860,105,880,69.2,65.5,5.3 
-"    South Asian [5]",520,330,310,20,190,63.5,59.6,6.1 
-"    Chinese",590,475,455,15,115,80.5,77.1,3.2 
-"    Black",320,220,200,20,105,68.8,62.5,9.1 
-"    Filipino",355,335,310,25,25,94.4,87.3,7.5 
-"    Latin American",155,120,115,0,35,77.4,74.2,0 
-"    Arab",80,55,45,0,30,68.8,56.2,0 
-"    Southeast Asian [6]",240,205,205,0,30,85.4,85.4,0 
-"    West Asian [7]",50,30,30,0,20,60.0,60.0,0 
+"Total - Population by visible minority",25365,16425,14885,1540,8935,64.8,58.7,9.4 
+"  Total visible minority population [4]",510,380,345,35,135,74.5,67.6,9.2 
+"    South Asian [5]",80,60,50,0,25,75.0,62.5,0 
+"    Chinese",115,70,60,15,40,60.9,52.2,21.4 
+"    Black",40,40,40,0,0,100.0,100.0,0 
+"    Filipino",50,50,45,0,0,100.0,90.0,0 
+"    Latin American",35,30,0,0,0,85.7,0,0 
+"    Arab",0,0,0,0,0,0,0,0 
+"    Southeast Asian [6]",90,90,90,0,0,100.0,100.0,0 
+"    West Asian [7]",0,0,0,0,0,0,0,0 
 "    Korean",0,0,0,0,0,0,0,0 
-"    Japanese",250,90,85,0,160,36.0,34.0,0 
-"    Visible minority, n.i.e. [8]",115,60,55,0,55,52.2,47.8,0 
-"    Multiple visible minorities [9]",150,50,45,0,105,33.3,30.0,0 
-"  Not a visible minority [10]",98260,60720,55575,5150,37535,61.8,56.6,8.5 
+"    Japanese",45,15,10,0,35,33.3,22.2,0 
+"    Visible minority, n.i.e. [8]",20,20,20,0,0,100.0,100.0,0 
+"    Multiple visible minorities [9]",30,0,0,0,25,0,0,0 
+"  Not a visible minority [10]",24850,16050,14540,1510,8800,64.6,58.5,9.4 
 "Note"
 "[1] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
-"[2] 'Highest certificate, diploma or degree' refers to the highest certificate, diploma or degree completed based on a hierarchy which is generally related to the amount of time spent 'in-class.' For postsecondary completers, a university education is considered to be a higher level of schooling than a college education, while a college education is considered to be a higher level of education than in the trades. Although some trades requirements may take as long or longer to complete than a given college or university program, the majority of time is spent in on-the-job paid training and less time is spent in the classroom.  For further definitions, refer to the National Household Survey Dictionary, Catalogue no. 99-000-X. For any comments on collection, dissemination or data quality for this variable, refer to the Education Reference Guide, National Household Survey, Catalogue no. 99-012-X2011006."
+"[2] 'High school diploma or equivalent' refers to graduation from a secondary school or equivalent. It excludes persons with a postsecondary certificate, diploma or degree."
 "[3] In the past, this variable was called Labour force activity."
 "[4] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
 "[5] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."

@@ -2,28 +2,28 @@
 "Geography = Kitchener - Cambridge - Waterloo"
 "Global non-response rate (GNR) [1] =  23.4 %"
 "Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
-"Highest certificate, diploma or degree (7) = Total - Highest certificate, diploma or degree [2]"
+"Highest certificate, diploma or degree (7) =   High school diploma or equivalent [2]"
 "Age groups (13B) = Total - Age groups"
 "Sex (3) = Total - Sex"
 "Visible minority (15)","Total - Labour force status [3]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
-"Total - Population by visible minority",383635,267460,248165,19295,116170,69.7,64.7,7.2 
-"  Total visible minority population [4]",58355,39085,35055,4025,19270,67.0,60.1,10.3 
-"    South Asian [5]",15835,10425,9265,1160,5410,65.8,58.5,11.1 
-"    Chinese",9505,5960,5420,540,3545,62.7,57.0,9.1 
-"    Black",7140,5010,4345,665,2130,70.2,60.9,13.3 
-"    Filipino",2045,1650,1540,110,395,80.7,75.3,6.7 
-"    Latin American",6685,4860,4440,420,1820,72.7,66.4,8.6 
-"    Arab",3690,2090,1800,285,1600,56.6,48.8,13.6 
-"    Southeast Asian [6]",5950,4290,3910,385,1660,72.1,65.7,9.0 
-"    West Asian [7]",3025,1810,1640,170,1215,59.8,54.2,9.4 
-"    Korean",1260,700,650,45,560,55.6,51.6,6.4 
-"    Japanese",560,375,370,0,185,67.0,66.1,0 
-"    Visible minority, n.i.e. [8]",1275,955,850,105,320,74.9,66.7,11.0 
-"    Multiple visible minorities [9]",1385,955,825,135,430,69.0,59.6,14.1 
-"  Not a visible minority [10]",325275,228375,213110,15265,96900,70.2,65.5,6.7 
+"Total - Population by visible minority",107010,76355,69545,6810,30655,71.4,65.0,8.9 
+"  Total visible minority population [4]",15070,9415,8080,1335,5655,62.5,53.6,14.2 
+"    South Asian [5]",3790,2285,2025,260,1505,60.3,53.4,11.4 
+"    Chinese",2295,910,735,175,1385,39.7,32.0,19.2 
+"    Black",1970,1500,1190,305,470,76.1,60.4,20.3 
+"    Filipino",450,325,280,40,130,72.2,62.2,12.3 
+"    Latin American",1875,1415,1240,175,460,75.5,66.1,12.4 
+"    Arab",820,380,275,105,440,46.3,33.5,27.6 
+"    Southeast Asian [6]",1860,1400,1315,80,460,75.3,70.7,5.7 
+"    West Asian [7]",830,470,385,90,355,56.6,46.4,19.1 
+"    Korean",315,125,125,0,195,39.7,39.7,0 
+"    Japanese",160,125,120,0,40,78.1,75.0,0 
+"    Visible minority, n.i.e. [8]",345,255,200,60,90,73.9,58.0,23.5 
+"    Multiple visible minorities [9]",355,240,195,45,120,67.6,54.9,18.8 
+"  Not a visible minority [10]",91940,66940,61470,5475,25000,72.8,66.9,8.2 
 "Note"
 "[1] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
-"[2] 'Highest certificate, diploma or degree' refers to the highest certificate, diploma or degree completed based on a hierarchy which is generally related to the amount of time spent 'in-class.' For postsecondary completers, a university education is considered to be a higher level of schooling than a college education, while a college education is considered to be a higher level of education than in the trades. Although some trades requirements may take as long or longer to complete than a given college or university program, the majority of time is spent in on-the-job paid training and less time is spent in the classroom.  For further definitions, refer to the National Household Survey Dictionary, Catalogue no. 99-000-X. For any comments on collection, dissemination or data quality for this variable, refer to the Education Reference Guide, National Household Survey, Catalogue no. 99-012-X2011006."
+"[2] 'High school diploma or equivalent' refers to graduation from a secondary school or equivalent. It excludes persons with a postsecondary certificate, diploma or degree."
 "[3] In the past, this variable was called Labour force activity."
 "[4] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
 "[5] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."

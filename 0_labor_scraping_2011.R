@@ -11,13 +11,46 @@ library(stringr)
 
 
 ## create table of links to download data for each geo
-url1 <- "https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID="
-url2 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0"
+url <- "https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID="
+url0 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0"
+url1 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=1&D3=0&D4=0&D5=0&D6=0"
+url2 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=2&D3=0&D4=0&D5=0&D6=0"
+url3 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=3&D3=0&D4=0&D5=0&D6=0"
 gid <- seq(from = 1118297, to = 1118464)
 table <- tibble("gid" = vector(length = 0, mode = "numeric"), "link" = vector(length = 0, mode = "character"))
 
 for(i in gid) {
-  link <- paste0(url1, i, url2)
+  link <- paste0(url, i, url0)
+  html <- read_html(link)
+  download <- html %>% html_elements("li a") %>% html_attr("href") %>% 
+    str_subset(pattern = "CSV$") %>% 
+    str_remove_all("amp")
+  output <- tibble("gid" = i, "link" = download)
+  table <- bind_rows(table, output)
+}
+  # do this for each education level
+for(i in gid) {
+  link <- paste0(url, i, url1)
+  html <- read_html(link)
+  download <- html %>% html_elements("li a") %>% html_attr("href") %>% 
+    str_subset(pattern = "CSV$") %>% 
+    str_remove_all("amp")
+  output <- tibble("gid" = i, "link" = download)
+  table <- bind_rows(table, output)
+}
+
+for(i in gid) {
+  link <- paste0(url, i, url2)
+  html <- read_html(link)
+  download <- html %>% html_elements("li a") %>% html_attr("href") %>% 
+    str_subset(pattern = "CSV$") %>% 
+    str_remove_all("amp")
+  output <- tibble("gid" = i, "link" = download)
+  table <- bind_rows(table, output)
+}
+
+for(i in gid) {
+  link <- paste0(url, i, url3)
   html <- read_html(link)
   download <- html %>% html_elements("li a") %>% html_attr("href") %>% 
     str_subset(pattern = "CSV$") %>% 
@@ -40,11 +73,50 @@ links <- table[,2]
 for(i in 1:168) {
   
   url <- paste0("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/", links[i,])
-  raw_list <- download.file(url, paste0(dir, gid[i], ".csv"))
+  raw_list <- download.file(url, paste0(dir, "a", gid[i], ".csv"))
+}
+  # repeat for each education level
+for(i in 1:168) {
+  
+  url <- paste0("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/", links[i,])
+  raw_list <- download.file(url, paste0(dir, "b", gid[i], ".csv"))
+}
+
+for(i in 1:168) {
+  
+  url <- paste0("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/", links[i,])
+  raw_list <- download.file(url, paste0(dir, "c", gid[i], ".csv"))
+}
+
+for(i in 1:168) {
+  
+  url <- paste0("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/", links[i,])
+  raw_list <- download.file(url, paste0(dir, "d", gid[i], ".csv"))
 }
   # download each csv, extract data to new table
 for(i in 1:168) {
-  output <- read.table(file = paste0("temp/", gid[i], ".csv"), header = F, sep = ",",
+  output <- read.table(file = paste0("temp/", "a", gid[i], ".csv"), header = F, sep = ",",
+                       col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
+    slice(2, 8, 10)
+  table2 <- bind_rows(table2, output)
+}
+  # repeat for each education level
+for(i in 1:168) {
+  output <- read.table(file = paste0("temp/", "b", gid[i], ".csv"), header = F, sep = ",",
+                       col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
+    slice(2, 8, 10)
+  table2 <- bind_rows(table2, output)
+}
+
+for(i in 1:168) {
+  output <- read.table(file = paste0("temp/", "c", gid[i], ".csv"), header = F, sep = ",",
+                       col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
+    slice(2, 8, 10)
+  table2 <- bind_rows(table2, output)
+}
+
+for(i in 1:168) {
+  output <- read.table(file = paste0("temp/", "d", gid[i], ".csv"), header = F, sep = ",",
                        col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
@@ -64,7 +136,7 @@ table2_names <- data_row_odd %>%
   str_remove_all("\\[.\\]")
   # create df, making geo a column
 colnames <- data.frame("names" = table2_names) %>% 
-  separate(names, into = paste0("V", seq_len(168)), sep = ", ") %>% 
+  separate(names, into = paste0("V", seq_len(672)), sep = ", ") %>% 
   t()
 
 ## tidy data with geo name, values, corrected col names
@@ -81,6 +153,7 @@ colnames(labor_2011) <- colnames
 #rename(labor_2011, geo_name = `geo_name[,1]`)
   # not working
 labor_2011$year <-  2011
+labor_year$educ_level <-   
 labor_2011 <- labor_2011 %>% 
   select(year, everything())
 labor_2011 <- labor_2011 %>% 
@@ -93,3 +166,4 @@ labor_2011 <- labor_2011 %>%
     participation_rate = as.numeric(participation_rate),
     unemployment_rate = as.numeric(unemployment_rate)
   )
+  

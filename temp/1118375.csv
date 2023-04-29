@@ -2,28 +2,28 @@
 "Geography = Oshawa"
 "Global non-response rate (GNR) [1] =  28.3 %"
 "Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
-"Highest certificate, diploma or degree (7) = Total - Highest certificate, diploma or degree [2]"
+"Highest certificate, diploma or degree (7) =   High school diploma or equivalent [2]"
 "Age groups (13B) = Total - Age groups"
 "Sex (3) = Total - Sex"
 "Visible minority (15)","Total - Labour force status [3]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
-"Total - Population by visible minority",285520,194075,176850,17220,91450,68.0,61.9,8.9 
-"  Total visible minority population [4]",30500,21180,18875,2305,9320,69.4,61.9,10.9 
-"    South Asian [5]",7115,4945,4445,500,2165,69.5,62.5,10.1 
-"    Chinese",3030,2105,1815,290,920,69.5,59.9,13.8 
-"    Black",9940,6620,5735,880,3325,66.6,57.7,13.3 
-"    Filipino",2995,2310,2160,150,690,77.1,72.1,6.5 
-"    Latin American",1925,1445,1285,155,485,75.1,66.8,10.7 
-"    Arab",870,590,560,25,280,67.8,64.4,4.2 
-"    Southeast Asian [6]",635,460,380,80,170,72.4,59.8,17.4 
-"    West Asian [7]",755,455,420,40,300,60.3,55.6,8.8 
-"    Korean",575,340,330,0,235,59.1,57.4,0 
-"    Japanese",360,270,250,15,90,75.0,69.4,5.6 
-"    Visible minority, n.i.e. [8]",1170,875,790,90,295,74.8,67.5,10.3 
-"    Multiple visible minorities [9]",1125,765,695,65,360,68.0,61.8,8.5 
-"  Not a visible minority [10]",255020,172895,157970,14920,82125,67.8,61.9,8.6 
+"Total - Population by visible minority",84930,58105,51430,6680,26825,68.4,60.6,11.5 
+"  Total visible minority population [4]",7555,5040,4205,830,2520,66.7,55.7,16.5 
+"    South Asian [5]",1475,975,820,150,505,66.1,55.6,15.4 
+"    Chinese",675,385,280,100,295,57.0,41.5,26.0 
+"    Black",2735,1885,1540,340,855,68.9,56.3,18.0 
+"    Filipino",675,520,440,80,155,77.0,65.2,15.4 
+"    Latin American",555,410,375,35,150,73.9,67.6,8.5 
+"    Arab",205,105,100,0,100,51.2,48.8,0 
+"    Southeast Asian [6]",180,135,105,35,45,75.0,58.3,25.9 
+"    West Asian [7]",145,75,65,0,70,51.7,44.8,0 
+"    Korean",170,80,80,0,95,47.1,47.1,0 
+"    Japanese",135,90,85,0,45,66.7,63.0,0 
+"    Visible minority, n.i.e. [8]",300,225,180,45,80,75.0,60.0,20.0 
+"    Multiple visible minorities [9]",290,165,140,30,120,56.9,48.3,18.2 
+"  Not a visible minority [10]",77370,53065,47220,5845,24305,68.6,61.0,11.0 
 "Note"
 "[1] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
-"[2] 'Highest certificate, diploma or degree' refers to the highest certificate, diploma or degree completed based on a hierarchy which is generally related to the amount of time spent 'in-class.' For postsecondary completers, a university education is considered to be a higher level of schooling than a college education, while a college education is considered to be a higher level of education than in the trades. Although some trades requirements may take as long or longer to complete than a given college or university program, the majority of time is spent in on-the-job paid training and less time is spent in the classroom.  For further definitions, refer to the National Household Survey Dictionary, Catalogue no. 99-000-X. For any comments on collection, dissemination or data quality for this variable, refer to the Education Reference Guide, National Household Survey, Catalogue no. 99-012-X2011006."
+"[2] 'High school diploma or equivalent' refers to graduation from a secondary school or equivalent. It excludes persons with a postsecondary certificate, diploma or degree."
 "[3] In the past, this variable was called Labour force activity."
 "[4] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
 "[5] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."

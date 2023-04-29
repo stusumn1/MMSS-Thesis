@@ -1,0 +1,35 @@
+"Labour Force Status (8), Visible Minority (15), Immigrant Status and Period of Immigration (10), Highest Certificate, Diploma or Degree (7), Age Groups (13B) and Sex (3) for the Population Aged 15 Years and Over, in Private Households of Canada, Provinces, Territories, Census Metropolitan Areas and Census Agglomerations, 2011 National Household Survey"
+"Geography = Portage la Prairie"
+"Global non-response rate (GNR) [1] =  29.1 %"
+"Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
+"Highest certificate, diploma or degree (7) = Total - Highest certificate, diploma or degree [2]"
+"Age groups (13B) = Total - Age groups"
+"Sex (3) = Total - Sex"
+"Visible minority (15)","Total - Labour force status [3]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
+"Total - Population by visible minority",9905,6580,6270,310,3325,66.4,63.3,4.7 
+"  Total visible minority population [4]",245,205,180,0,45,83.7,73.5,0 
+"    South Asian [5]",55,45,45,0,0,81.8,81.8,0 
+"    Chinese",0,0,0,0,0,0,0,0 
+"    Black",40,30,35,0,0,75.0,87.5,0 
+"    Filipino",110,100,80,0,0,90.9,72.7,0 
+"    Latin American",0,0,0,0,0,0,0,0 
+"    Arab",0,0,0,0,0,0,0,0 
+"    Southeast Asian [6]",0,0,0,0,0,0,0,0 
+"    West Asian [7]",0,0,0,0,0,0,0,0 
+"    Korean",0,0,0,0,0,0,0,0 
+"    Japanese",0,0,0,0,0,0,0,0 
+"    Visible minority, n.i.e. [8]",0,0,0,0,0,0,0,0 
+"    Multiple visible minorities [9]",0,0,0,0,0,0,0,0 
+"  Not a visible minority [10]",9660,6375,6090,285,3285,66.0,63.0,4.5 
+"Note"
+"[1] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
+"[2] 'Highest certificate, diploma or degree' refers to the highest certificate, diploma or degree completed based on a hierarchy which is generally related to the amount of time spent 'in-class.' For postsecondary completers, a university education is considered to be a higher level of schooling than a college education, while a college education is considered to be a higher level of education than in the trades. Although some trades requirements may take as long or longer to complete than a given college or university program, the majority of time is spent in on-the-job paid training and less time is spent in the classroom.  For further definitions, refer to the National Household Survey Dictionary, Catalogue no. 99-000-X. For any comments on collection, dissemination or data quality for this variable, refer to the Education Reference Guide, National Household Survey, Catalogue no. 99-012-X2011006."
+"[3] In the past, this variable was called Labour force activity."
+"[4] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
+"[5] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."
+"[6] For example, 'Vietnamese,' 'Cambodian,' 'Malaysian,' 'Laotian,' etc."
+"[7] For example, 'Iranian,' 'Afghan,' etc."
+"[8] The abbreviation 'n.i.e.' means 'not included elsewhere.' Includes respondents who reported a write-in response such as 'Guyanese,' 'West Indian,' 'Tibetan,' 'Polynesian,' 'Pacific Islander,' etc."
+"[9] Includes respondents who reported more than one visible minority group by checking two or more mark-in circles, e.g., 'Black' and 'South Asian.'"
+"[10] Includes respondents who reported 'Yes' to the Aboriginal identity question (Question 18) as well as respondents who were not considered to be members of a visible minority group."
+"Source: Statistics Canada - 2011 National Household Survey. Catalogue Number 99-012-X2011038."

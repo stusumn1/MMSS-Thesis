@@ -2,34 +2,33 @@
 "Geography = Abbotsford - Mission"
 "Global non-response rate (GNR) [1] =  31.5 %"
 "Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
-"Highest certificate, diploma or degree (7) = Total - Highest certificate, diploma or degree [2]"
+"Highest certificate, diploma or degree (7) =   No certificate, diploma or degree"
 "Age groups (13B) = Total - Age groups"
 "Sex (3) = Total - Sex"
-"Visible minority (15)","Total - Labour force status [3]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
-"Total - Population by visible minority",134380,89805,82430,7375,44585,66.8,61.3,8.2 
-"  Total visible minority population [4]",32010,21520,18810,2710,10490,67.2,58.8,12.6 
-"    South Asian [5]",24575,16375,14205,2170,8195,66.6,57.8,13.3 
-"    Chinese",1595,1025,920,110,565,64.3,57.7,10.7 
-"    Black",860,660,550,115,195,76.7,64.0,17.4 
-"    Filipino",720,555,525,30,165,77.1,72.9,5.4 
-"    Latin American",780,540,515,25,245,69.2,66.0,4.6 
-"    Arab",210,135,130,0,75,64.3,61.9,0 
-"    Southeast Asian [6]",895,685,585,100,215,76.5,65.4,14.6 
-"    West Asian [7]",215,180,175,0,40,83.7,81.4,0 
-"    Korean",1060,580,490,95,475,54.7,46.2,16.4 
-"    Japanese",445,305,295,0,135,68.5,66.3,0 
-"    Visible minority, n.i.e. [8]",200,150,145,0,50,75.0,72.5,0 
-"    Multiple visible minorities [9]",455,325,280,45,130,71.4,61.5,13.8 
-"  Not a visible minority [10]",102370,68285,63620,4665,34085,66.7,62.1,6.8 
+"Visible minority (15)","Total - Labour force status [2]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
+"Total - Population by visible minority",29045,13125,11135,1990,15920,45.2,38.3,15.2 
+"  Total visible minority population [3]",9695,4430,3435,995,5265,45.7,35.4,22.5 
+"    South Asian [4]",8305,3755,2910,845,4550,45.2,35.0,22.5 
+"    Chinese",315,145,100,45,165,46.0,31.7,31.0 
+"    Black",225,120,60,60,105,53.3,26.7,50.0 
+"    Filipino",45,0,0,0,35,0,0,0 
+"    Latin American",160,55,45,0,110,34.4,28.1,0 
+"    Arab",30,25,25,0,0,83.3,83.3,0 
+"    Southeast Asian [5]",315,215,185,35,95,68.3,58.7,16.3 
+"    West Asian [6]",0,0,0,0,0,0,0,0 
+"    Korean",165,0,0,0,135,0,0,0 
+"    Japanese",45,0,0,0,25,0,0,0 
+"    Visible minority, n.i.e. [7]",25,15,15,0,0,60.0,60.0,0 
+"    Multiple visible minorities [8]",65,40,30,0,30,61.5,46.2,0 
+"  Not a visible minority [9]",19350,8690,7700,990,10655,44.9,39.8,11.4 
 "Note"
 "[1] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
-"[2] 'Highest certificate, diploma or degree' refers to the highest certificate, diploma or degree completed based on a hierarchy which is generally related to the amount of time spent 'in-class.' For postsecondary completers, a university education is considered to be a higher level of schooling than a college education, while a college education is considered to be a higher level of education than in the trades. Although some trades requirements may take as long or longer to complete than a given college or university program, the majority of time is spent in on-the-job paid training and less time is spent in the classroom.  For further definitions, refer to the National Household Survey Dictionary, Catalogue no. 99-000-X. For any comments on collection, dissemination or data quality for this variable, refer to the Education Reference Guide, National Household Survey, Catalogue no. 99-012-X2011006."
-"[3] In the past, this variable was called Labour force activity."
-"[4] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
-"[5] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."
-"[6] For example, 'Vietnamese,' 'Cambodian,' 'Malaysian,' 'Laotian,' etc."
-"[7] For example, 'Iranian,' 'Afghan,' etc."
-"[8] The abbreviation 'n.i.e.' means 'not included elsewhere.' Includes respondents who reported a write-in response such as 'Guyanese,' 'West Indian,' 'Tibetan,' 'Polynesian,' 'Pacific Islander,' etc."
-"[9] Includes respondents who reported more than one visible minority group by checking two or more mark-in circles, e.g., 'Black' and 'South Asian.'"
-"[10] Includes respondents who reported 'Yes' to the Aboriginal identity question (Question 18) as well as respondents who were not considered to be members of a visible minority group."
+"[2] In the past, this variable was called Labour force activity."
+"[3] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
+"[4] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."
+"[5] For example, 'Vietnamese,' 'Cambodian,' 'Malaysian,' 'Laotian,' etc."
+"[6] For example, 'Iranian,' 'Afghan,' etc."
+"[7] The abbreviation 'n.i.e.' means 'not included elsewhere.' Includes respondents who reported a write-in response such as 'Guyanese,' 'West Indian,' 'Tibetan,' 'Polynesian,' 'Pacific Islander,' etc."
+"[8] Includes respondents who reported more than one visible minority group by checking two or more mark-in circles, e.g., 'Black' and 'South Asian.'"
+"[9] Includes respondents who reported 'Yes' to the Aboriginal identity question (Question 18) as well as respondents who were not considered to be members of a visible minority group."
 "Source: Statistics Canada - 2011 National Household Survey. Catalogue Number 99-012-X2011038."

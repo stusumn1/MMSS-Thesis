@@ -2,29 +2,29 @@
 "Geography = British Columbia / Colombie-Britannique [1]"
 "Global non-response rate (GNR) [2] =  26.1 %"
 "Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
-"Highest certificate, diploma or degree (7) = Total - Highest certificate, diploma or degree [3]"
+"Highest certificate, diploma or degree (7) =   High school diploma or equivalent [3]"
 "Age groups (13B) = Total - Age groups"
 "Sex (3) = Total - Sex"
 "Visible minority (15)","Total - Labour force status [4]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
-"Total - Population by visible minority",3646840,2354245,2171470,182775,1292590,64.6,59.5,7.8 
-"  Total visible minority population [5]",963550,612410,560710,51700,351140,63.6,58.2,8.4 
-"    South Asian [6]",245510,163000,148025,14975,82510,66.4,60.3,9.2 
-"    Chinese",376270,215875,198795,17075,160395,57.4,52.8,7.9 
-"    Black",23515,16880,14845,2035,6625,71.8,63.1,12.1 
-"    Filipino",100670,77250,73185,4070,23415,76.7,72.7,5.3 
-"    Latin American",30000,21845,19910,1940,8150,72.8,66.4,8.9 
-"    Arab",10865,6175,5355,825,4690,56.8,49.3,13.4 
-"    Southeast Asian [7]",42125,29280,26480,2800,12840,69.5,62.9,9.6 
-"    West Asian [8]",33435,21425,18905,2520,12005,64.1,56.5,11.8 
-"    Korean",44615,23585,20890,2695,21030,52.9,46.8,11.4 
-"    Japanese",30780,19295,18050,1240,11485,62.7,58.6,6.4 
-"    Visible minority, n.i.e. [9]",4850,3355,3035,320,1500,69.2,62.6,9.5 
-"    Multiple visible minorities [10]",20925,14430,13230,1205,6495,69.0,63.2,8.4 
-"  Not a visible minority [11]",2683290,1741840,1610765,131075,941450,64.9,60.0,7.5 
+"Total - Population by visible minority",1009400,646485,587605,58880,362915,64.0,58.2,9.1 
+"  Total visible minority population [5]",253445,148710,133045,15670,104730,58.7,52.5,10.5 
+"    South Asian [6]",72355,48550,43465,5090,23800,67.1,60.1,10.5 
+"    Chinese",98375,48455,43320,5140,49915,49.3,44.0,10.6 
+"    Black",6520,4780,4190,595,1740,73.3,64.3,12.4 
+"    Filipino",20910,14930,13940,990,5985,71.4,66.7,6.6 
+"    Latin American",7740,5445,4810,640,2290,70.3,62.1,11.8 
+"    Arab",2900,1360,1065,295,1540,46.9,36.7,21.7 
+"    Southeast Asian [7]",11925,7925,7095,825,4005,66.5,59.5,10.4 
+"    West Asian [8]",7480,3980,3340,645,3495,53.2,44.7,16.2 
+"    Korean",11005,4830,4065,765,6180,43.9,36.9,15.8 
+"    Japanese",8015,4515,4230,285,3495,56.3,52.8,6.3 
+"    Visible minority, n.i.e. [9]",1250,800,735,70,450,64.0,58.8,8.8 
+"    Multiple visible minorities [10]",4975,3140,2800,335,1835,63.1,56.3,10.7 
+"  Not a visible minority [11]",755955,497770,454560,43210,258185,65.8,60.1,8.7 
 "Note"
 "[1] Excludes National Household Survey data for one or more incompletely enumerated Indian reserves or Indian settlements."
 "[2] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
-"[3] 'Highest certificate, diploma or degree' refers to the highest certificate, diploma or degree completed based on a hierarchy which is generally related to the amount of time spent 'in-class.' For postsecondary completers, a university education is considered to be a higher level of schooling than a college education, while a college education is considered to be a higher level of education than in the trades. Although some trades requirements may take as long or longer to complete than a given college or university program, the majority of time is spent in on-the-job paid training and less time is spent in the classroom.  For further definitions, refer to the National Household Survey Dictionary, Catalogue no. 99-000-X. For any comments on collection, dissemination or data quality for this variable, refer to the Education Reference Guide, National Household Survey, Catalogue no. 99-012-X2011006."
+"[3] 'High school diploma or equivalent' refers to graduation from a secondary school or equivalent. It excludes persons with a postsecondary certificate, diploma or degree."
 "[4] In the past, this variable was called Labour force activity."
 "[5] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
 "[6] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."

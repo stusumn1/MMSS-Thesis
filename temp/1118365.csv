@@ -2,28 +2,28 @@
 "Geography = Brockville"
 "Global non-response rate (GNR) [1] =  32.9 %"
 "Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
-"Highest certificate, diploma or degree (7) = Total - Highest certificate, diploma or degree [2]"
+"Highest certificate, diploma or degree (7) =   High school diploma or equivalent [2]"
 "Age groups (13B) = Total - Age groups"
 "Sex (3) = Total - Sex"
 "Visible minority (15)","Total - Labour force status [3]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
-"Total - Population by visible minority",32780,19865,18420,1445,12915,60.6,56.2,7.3 
-"  Total visible minority population [4]",710,480,425,50,230,67.6,59.9,10.4 
-"    South Asian [5]",115,100,85,0,0,87.0,73.9,0 
-"    Chinese",220,150,150,0,65,68.2,68.2,0 
-"    Black",90,55,35,0,40,61.1,38.9,0 
-"    Filipino",70,45,40,0,30,64.3,57.1,0 
-"    Latin American",35,25,25,0,0,71.4,71.4,0 
-"    Arab",35,0,0,0,25,0,0,0 
-"    Southeast Asian [6]",105,70,70,0,35,66.7,66.7,0 
-"    West Asian [7]",10,0,0,0,10,0,0,0 
+"Total - Population by visible minority",9625,6275,5710,570,3345,65.2,59.3,9.1 
+"  Total visible minority population [4]",170,95,80,0,75,55.9,47.1,0 
+"    South Asian [5]",30,25,0,0,0,83.3,0,0 
+"    Chinese",65,25,25,0,35,38.5,38.5,0 
+"    Black",0,0,0,0,0,0,0,0 
+"    Filipino",0,0,0,0,0,0,0,0 
+"    Latin American",0,0,0,0,0,0,0,0 
+"    Arab",0,0,0,0,0,0,0,0 
+"    Southeast Asian [6]",40,30,30,0,0,75.0,75.0,0 
+"    West Asian [7]",0,0,0,0,0,0,0,0 
 "    Korean",0,0,0,0,0,0,0,0 
 "    Japanese",0,0,0,0,0,0,0,0 
 "    Visible minority, n.i.e. [8]",0,0,0,0,0,0,0,0 
 "    Multiple visible minorities [9]",0,0,0,0,0,0,0,0 
-"  Not a visible minority [10]",32070,19385,17990,1390,12685,60.4,56.1,7.2 
+"  Not a visible minority [10]",9455,6185,5620,560,3270,65.4,59.4,9.1 
 "Note"
 "[1] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
-"[2] 'Highest certificate, diploma or degree' refers to the highest certificate, diploma or degree completed based on a hierarchy which is generally related to the amount of time spent 'in-class.' For postsecondary completers, a university education is considered to be a higher level of schooling than a college education, while a college education is considered to be a higher level of education than in the trades. Although some trades requirements may take as long or longer to complete than a given college or university program, the majority of time is spent in on-the-job paid training and less time is spent in the classroom.  For further definitions, refer to the National Household Survey Dictionary, Catalogue no. 99-000-X. For any comments on collection, dissemination or data quality for this variable, refer to the Education Reference Guide, National Household Survey, Catalogue no. 99-012-X2011006."
+"[2] 'High school diploma or equivalent' refers to graduation from a secondary school or equivalent. It excludes persons with a postsecondary certificate, diploma or degree."
 "[3] In the past, this variable was called Labour force activity."
 "[4] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
 "[5] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."

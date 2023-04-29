@@ -1,0 +1,35 @@
+"Labour Force Status (8), Visible Minority (15), Immigrant Status and Period of Immigration (10), Highest Certificate, Diploma or Degree (7), Age Groups (13B) and Sex (3) for the Population Aged 15 Years and Over, in Private Households of Canada, Provinces, Territories, Census Metropolitan Areas and Census Agglomerations, 2011 National Household Survey"
+"Geography = St. Catharines - Niagara"
+"Global non-response rate (GNR) [1] =  29.2 %"
+"Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
+"Highest certificate, diploma or degree (7) = Total - Highest certificate, diploma or degree [2]"
+"Age groups (13B) = Total - Age groups"
+"Sex (3) = Total - Sex"
+"Visible minority (15)","Total - Labour force status [3]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
+"Total - Population by visible minority",324895,199965,182405,17555,124930,61.5,56.1,8.8 
+"  Total visible minority population [4]",20220,13460,11565,1900,6755,66.6,57.2,14.1 
+"    South Asian [5]",2540,1770,1590,180,770,69.7,62.6,10.2 
+"    Chinese",3045,1860,1655,205,1190,61.1,54.4,11.0 
+"    Black",4210,2810,2165,650,1395,66.7,51.4,23.1 
+"    Filipino",2250,1625,1535,90,625,72.2,68.2,5.5 
+"    Latin American",2990,2295,1945,355,690,76.8,65.1,15.5 
+"    Arab",1160,605,520,85,550,52.2,44.8,14.0 
+"    Southeast Asian [6]",1215,870,750,125,345,71.6,61.7,14.4 
+"    West Asian [7]",525,250,210,40,275,47.6,40.0,16.0 
+"    Korean",765,450,400,55,315,58.8,52.3,12.2 
+"    Japanese",575,345,305,40,230,60.0,53.0,11.6 
+"    Visible minority, n.i.e. [8]",415,240,195,50,170,57.8,47.0,20.8 
+"    Multiple visible minorities [9]",540,335,290,45,205,62.0,53.7,13.4 
+"  Not a visible minority [10]",304675,186495,170840,15655,118175,61.2,56.1,8.4 
+"Note"
+"[1] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
+"[2] 'Highest certificate, diploma or degree' refers to the highest certificate, diploma or degree completed based on a hierarchy which is generally related to the amount of time spent 'in-class.' For postsecondary completers, a university education is considered to be a higher level of schooling than a college education, while a college education is considered to be a higher level of education than in the trades. Although some trades requirements may take as long or longer to complete than a given college or university program, the majority of time is spent in on-the-job paid training and less time is spent in the classroom.  For further definitions, refer to the National Household Survey Dictionary, Catalogue no. 99-000-X. For any comments on collection, dissemination or data quality for this variable, refer to the Education Reference Guide, National Household Survey, Catalogue no. 99-012-X2011006."
+"[3] In the past, this variable was called Labour force activity."
+"[4] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
+"[5] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."
+"[6] For example, 'Vietnamese,' 'Cambodian,' 'Malaysian,' 'Laotian,' etc."
+"[7] For example, 'Iranian,' 'Afghan,' etc."
+"[8] The abbreviation 'n.i.e.' means 'not included elsewhere.' Includes respondents who reported a write-in response such as 'Guyanese,' 'West Indian,' 'Tibetan,' 'Polynesian,' 'Pacific Islander,' etc."
+"[9] Includes respondents who reported more than one visible minority group by checking two or more mark-in circles, e.g., 'Black' and 'South Asian.'"
+"[10] Includes respondents who reported 'Yes' to the Aboriginal identity question (Question 18) as well as respondents who were not considered to be members of a visible minority group."
+"Source: Statistics Canada - 2011 National Household Survey. Catalogue Number 99-012-X2011038."
