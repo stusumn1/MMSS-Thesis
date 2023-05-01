@@ -133,16 +133,116 @@ table2_names <- data_row_odd %>%
   str_remove_all('\\\"') %>% 
   str_remove_all("c\\(") %>% 
   str_remove_all("\\)$") %>% 
-  str_remove_all("\\[.\\]")
+  str_remove_all("\\\n") %>% 
+  str_remove_all("\\[1\\]")
+
   # create df, making geo a column
 colnames <- data.frame("names" = table2_names) %>% 
   separate(names, into = paste0("V", seq_len(672)), sep = ", ") %>% 
+  select(-568, -400, -232, -64) %>% 
   t()
+rownames(colnames) <- 1:668
+# correct flawed names manually ----
+colnames[637] <- "Lloydminster (Alberta part)"
+colnames[470] <- "Lloydminster (Alberta part)"
+colnames[303] <- "Lloydminster (Alberta part)"
+colnames[136] <- "Lloydminster (Alberta part)"
 
-## tidy data with geo name, values, corrected col names
+colnames[636] <- "Lloydminster (Saskatchewan part)"
+colnames[472] <- "Lloydminster (Saskatchewan part)"
+colnames[301] <- "Lloydminster (Saskatchewan part)"
+colnames[135] <- "Lloydminster (Saskatchewan part)"
+
+colnames[568] <- "Ottawa - Gatineau (Ontario part)"
+colnames[401] <- "Ottawa - Gatineau (Ontario part)"
+colnames[234] <- "Ottawa - Gatineau (Ontario part)"
+colnames[67] <- "Ottawa - Gatineau (Ontario part)"
+
+colnames[567] <- "Ottawa - Gatineau (Quebec part)"
+colnames[400] <- "Ottawa - Gatineau (Quebec part)"
+colnames[233] <- "Ottawa - Gatineau (Quebec part)"
+colnames[66] <- "Ottawa - Gatineau (Quebec part)"
+
+colnames[565] <- "Hawkesbury (Ontario part)"
+colnames[398] <- "Hawkesbury (Ontario part)"
+colnames[231] <- "Hawkesbury (Ontario part)"
+colnames[64] <- "Hawkesbury (Ontario part)"
+
+colnames[557] <- "Montreal"
+colnames[390] <- "Montreal"
+colnames[223] <- "Montreal"
+colnames[56] <- "Montreal"
+
+colnames[549] <- "Trois-Riveres"
+colnames[382] <- "Trois-Riveres"
+colnames[215] <- "Trois-Riveres"
+colnames[48] <- "Trois-Riveres"
+
+colnames[543] <- "Quebec"
+colnames[376] <- "Quebec"
+colnames[209] <- "Quebec"
+colnames[42] <- "Quebec"
+
+colnames[542] <- "Sept-Iles"
+colnames[375] <- "Sept-Iles"
+colnames[208] <- "Sept-Iles"
+colnames[41] <- "Sept-Iles"
+
+colnames[537] <- "Rivere-du-Loup"
+colnames[370] <- "Rivere-du-Loup"
+colnames[203] <- "Rivere-du-Loup"
+colnames[36] <- "Rivere-du-Loup"
+
+colnames[533] <- "Campbellton (Quebec part)"
+colnames[366] <- "Campbellton (Quebec part)"
+colnames[199] <- "Campbellton (Quebec part)"
+colnames[32] <- "Campbellton (Quebec part)"
+
+colnames[532] <- "Campbellton(New Brunswick)"
+colnames[365] <- "Campbellton(New Brunswick)"
+colnames[198] <- "Campbellton(New Brunswick)"
+colnames[31] <- "Campbellton(New Brunswick)"
+
+colnames[513] <- "Northwest Territories"
+colnames[346] <- "Northwest Territories"
+colnames[179] <- "Northwest Territories"
+colnames[12] <- "Northwest Territories"
+
+colnames[511] <- "British Columbia"
+colnames[344] <- "British Columbia"
+colnames[177] <- "British Columbia"
+colnames[10] <- "British Columbia"
+
+colnames[506] <- "Quebec"
+colnames[339] <- "Quebec"
+colnames[172] <- "Quebec"
+colnames[5] <- "Quebec"
+
+colnames[505] <- "New Brunswick"
+colnames[338] <- "New Brunswick"
+colnames[171] <- "New Brunswick"
+colnames[4] <- "New Brunswick"
+
+colnames[504] <- "Nova Scotia"
+colnames[337] <- "Nova Scotia"
+colnames[170] <- "Nova Scotia"
+colnames[3] <- "Nova Scotia"
+
+colnames[503] <- "Prince Edward Island"
+colnames[336] <- "Prince Edward Island"
+colnames[169] <- "Prince Edward Island"
+colnames[2] <- "Prince Edward Island"
+
+colnames[502] <- "Newfoundland and Labrador"
+colnames[335] <- "Newfoundland and Labrador"
+colnames[168] <- "Newfoundland and Labrador"
+colnames[1] <- "Newfoundland and Labrador"
+
+## tidy data with geo name, values, corrected col names ----
   # extract values
 values <- table2 %>% 
-  slice(which(row_number() %% 3 == 0))
+  slice(which(row_number() %% 3 == 0)) %>% 
+  filter(!is.na(V2))
   # add geo names
 values$V1 <- colnames
   # correct col names
@@ -153,7 +253,7 @@ colnames(labor_2011) <- colnames
 #rename(labor_2011, geo_name = `geo_name[,1]`)
   # not working
 labor_2011$year <-  2011
-labor_year$educ_level <-   
+labor_2011$educ_level <- c(rep("Total - Highest certificate, diploma or degree", 167), rep("Below High School", 167), rep("High School", 167), rep("Apprenticeship", 167))
 labor_2011 <- labor_2011 %>% 
   select(year, everything())
 labor_2011 <- labor_2011 %>% 
@@ -166,4 +266,3 @@ labor_2011 <- labor_2011 %>%
     participation_rate = as.numeric(participation_rate),
     unemployment_rate = as.numeric(unemployment_rate)
   )
-  

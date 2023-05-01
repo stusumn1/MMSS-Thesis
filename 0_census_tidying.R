@@ -107,18 +107,28 @@ census_2011 <- census_2011_test %>%
   )
 
 ## combining census data ----
-all_four <- bind_rows(census_2011, last_three)
-
-## adding scs presence ----
 scs <- readRDS("data/processed/final_scs.rds") %>% 
   janitor::clean_names()
+  # extract list of cities with scs clinics
 scs_city <- distinct(scs, city) %>% 
   pull()
-
-census <- last_two %>% 
+census_2011$scs <- 0
+census_2016$scs <- 0
+  # add interruption variable to 2021 Census data
+census_2021 <- census_2021 %>% 
   mutate(
     scs = ifelse(
       geo %in% scs_city, 1, 0
     )
   )
-  ### In 2016, some of these cities don't have scs clinics
+  # reduce 2011 census to locales with data from future censuses
+census_2011 %>% 
+  distinct(geo)
+geo_2016 <- census_2016 %>% 
+  distinct(geo) %>% 
+  pull()
+c2011 <- census_2011 %>% 
+  filter(geo %in% geo_2016)
+
+census <- bind_rows(c2011, census_2016, census_2021)
+save(census, file = "data/processed/census_1121.rda")

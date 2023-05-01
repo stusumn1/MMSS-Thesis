@@ -34,6 +34,7 @@ total_labor <- bind_rows(labor_2011, labor_2016, labor_2021)
 
 total_labor <- total_labor %>% 
   mutate(
+    year = factor(year),
     educ_level = factor(educ_level),
     educ_level = fct_collapse(educ_level,
                              `Below High School` = "No certificate, diploma or degree",
@@ -55,4 +56,27 @@ total_labor <- total_labor %>%
                                              "Earned doctorate")
     ))
 
+## add presence of scs site
+load("data/processed/final_scs.rda")
+total_labor$scs <- 0
+y2011 <- total_labor %>% 
+  filter(year == "2011")
+y2016 <- total_labor %>% 
+  filter(year == "2016")
+y2021 <- total_labor %>% 
+  filter(year == "2021")
 
+scs_city <- distinct(final_scs, city) %>% 
+  pull()
+
+y2021_test <- y2021 %>% 
+  mutate(
+    scs = ifelse(
+      geo_name %in% scs_city, 1, 0
+    )
+  )
+y2021_test %>% 
+  filter(scs == 1)
+y2011 %>% 
+  filter(geo_name == "Calgary")
+    # big problem. These cities aren't in the labor measures in 2016 or 2021
