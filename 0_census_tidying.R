@@ -4,6 +4,7 @@ library(tidyverse)
 census_2021_og <- read_csv("data/raw/census_2021.csv") %>% 
   janitor::clean_names() %>% 
   separate(geo_name, into = c("geo_name", "geo_type"), sep = ", ") %>% 
+  filter(!is.na(geo_type)) %>% 
   select(census_year, geo_level, geo_name, geo_type, characteristic_name, c1_count_total)
 
 types_of_interest <- c("Population, 2021", "Population percentage change, 2011 to 2016", "Population percentage change, 2016 to 2021", "Population density per square kilometre", "Land area in square kilometres", "Total private dwellings", "Average age of the population", "Average household size", "Married", "Average size of census families", "Median total income in 2015 among recipients ($)", "Median total income in 2020 among recipients ($)", "In bottom half of the distribution", "In the bottom half of the distribution", "Gini index on adjusted household total income", "Unemployment rate")
@@ -11,7 +12,10 @@ census_2021_test <- census_2021_og %>%
   #mutate(geo_name = flat_names) %>% 
   filter(characteristic_name %in% types_of_interest, geo_name != "Lloydminster (Part)" & geo_name != "L'Ange-Gardien, Municipalit� (M�)") %>% 
   pivot_wider(names_from = characteristic_name, values_from = c1_count_total) %>% 
-  janitor::clean_names()
+  janitor::clean_names() %>% 
+    # remove problematic row L'Ange Gardien
+  slice(-602)
+  
 census_2021 <- census_2021_test %>% 
   transmute(
     year = census_2021_test$census_year,
@@ -30,12 +34,12 @@ census_2021 <- census_2021_test %>%
     gini = as.numeric(census_2021_test$gini_index_on_adjusted_household_total_income),
     unemployment = as.numeric(census_2021_test$unemployment_rate)
   )
-census_2021_test %>% 
-  colnames()
+
 
 ## census 2016 processing ----
 census_2016_og <- read_csv("data/raw/census_2016.csv") %>% 
   janitor::clean_names() %>% 
+  filter(!is.na(csd_type_name)) %>% 
   select(1, 3, 4, 8, 10, 13)
 names <- c("year", "geo_level", "geo", "csd_type", "characteristic_name", "c1_count_total")
 colnames(census_2016_og) <- names
@@ -44,7 +48,7 @@ census_2016_test <- census_2016_og %>%
   filter(characteristic_name %in% types_of_interest2, geo != "Lloydminster (Part)", geo != "L'Ange-Gardien") %>% 
   pivot_wider(names_from = characteristic_name, values_from = c1_count_total) %>% 
   janitor::clean_names()
-?gsub
+
 census_2016 <- census_2016_test%>% 
   transmute(
     year = census_2016_test$year,
@@ -63,10 +67,6 @@ census_2016 <- census_2016_test%>%
     income_lower_half = as.numeric(census_2016_test$in_the_bottom_half_of_the_distribution),
     unemployment = as.numeric(census_2016_test$unemployment_rate)
   )
-census_2016 %>% 
-  colnames()
-census_2021 %>% 
-  colnames()
 
 ## census 2011 processing ----
 census_2011_og <- read_csv("data/raw/census_2011.csv", skip = 1)

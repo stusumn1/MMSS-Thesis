@@ -11,11 +11,14 @@ data/*.rda
 
 # files too large for GitHub
 data/raw/census_2011.csv
+data/raw/census_2016.csv
 data/raw/census_2016.xlsx
 data/raw/census_2021.csv
 data/raw/*.CSV
 data/raw/labor_2016.csv
+data/raw/labor_2016_big.csv
 data/raw/labor_2021.csv
+data/raw/labor_2021_big.csv
 
 # mac related files
 .DS_Store
