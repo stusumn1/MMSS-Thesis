@@ -1,0 +1,36 @@
+"Labour Force Status (8), Visible Minority (15), Immigrant Status and Period of Immigration (10), Highest Certificate, Diploma or Degree (7), Age Groups (13B) and Sex (3) for the Population Aged 15 Years and Over, in Private Households of Canada, Provinces, Territories, Census Metropolitan Areas and Census Agglomerations, 2011 National Household Survey"
+"Geography = Saskatchewan [1]"
+"Global non-response rate (GNR) [2] =  29.3 %"
+"Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
+"Highest certificate, diploma or degree (7) =   Apprenticeship or trades certificate or diploma [3]"
+"Age groups (13B) = Total - Age groups"
+"Sex (3) = Total - Sex"
+"Visible minority (15)","Total - Labour force status [4]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
+"Total - Population by visible minority",98815,76175,72465,3700,22645,77.1,73.3,4.9 
+"  Total visible minority population [5]",3155,2660,2545,115,495,84.3,80.7,4.3 
+"    South Asian [6]",310,245,240,0,60,79.0,77.4,0 
+"    Chinese",540,440,430,0,100,81.5,79.6,0 
+"    Black",420,370,335,30,55,88.1,79.8,8.1 
+"    Filipino",940,840,815,0,110,89.4,86.7,0 
+"    Latin American",300,240,215,0,60,80.0,71.7,0 
+"    Arab",85,60,50,0,0,70.6,58.8,0 
+"    Southeast Asian [7]",275,240,235,0,35,87.3,85.5,0 
+"    West Asian [8]",95,80,75,0,0,84.2,78.9,0 
+"    Korean",60,45,40,0,0,75.0,66.7,0 
+"    Japanese",30,0,0,0,15,0,0,0 
+"    Visible minority, n.i.e. [9]",60,60,60,0,0,100.0,100.0,0 
+"    Multiple visible minorities [10]",40,40,40,0,0,100.0,100.0,0 
+"  Not a visible minority [11]",95660,73510,69920,3590,22155,76.8,73.1,4.9 
+"Note"
+"[1] Excludes National Household Survey data for one or more incompletely enumerated Indian reserves or Indian settlements."
+"[2] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
+"[3] 'Apprenticeship or trades certificate or diploma' includes Registered Apprenticeship certificates (including Certificate of Qualification, Journeyperson's designation) and other trades certificates or diplomas such as pre-employment or vocational certificates and diplomas from brief trade programs completed at community colleges, institutes of technology, vocational centres, and similar institutions."
+"[4] In the past, this variable was called Labour force activity."
+"[5] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
+"[6] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."
+"[7] For example, 'Vietnamese,' 'Cambodian,' 'Malaysian,' 'Laotian,' etc."
+"[8] For example, 'Iranian,' 'Afghan,' etc."
+"[9] The abbreviation 'n.i.e.' means 'not included elsewhere.' Includes respondents who reported a write-in response such as 'Guyanese,' 'West Indian,' 'Tibetan,' 'Polynesian,' 'Pacific Islander,' etc."
+"[10] Includes respondents who reported more than one visible minority group by checking two or more mark-in circles, e.g., 'Black' and 'South Asian.'"
+"[11] Includes respondents who reported 'Yes' to the Aboriginal identity question (Question 18) as well as respondents who were not considered to be members of a visible minority group."
+"Source: Statistics Canada - 2011 National Household Survey. Catalogue Number 99-012-X2011038."

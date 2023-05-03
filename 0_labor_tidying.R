@@ -29,8 +29,7 @@ labor_2021 <- labor_2021_og %>%
         highest_certificate_diploma_or_degree_16 == "Total - Highest certificate, diploma or degree" | highest_certificate_diploma_or_degree_16 == "No certificate, diploma or degree" | highest_certificate_diploma_or_degree_16 == "High (secondary) school diploma or equivalency certificate" | highest_certificate_diploma_or_degree_16 == "Apprenticeship or trades certificate or diploma" | highest_certificate_diploma_or_degree_16 == "Bachelor’s degree or higher" | highest_certificate_diploma_or_degree_16 == "University certificate or diploma below bachelor level") %>% 
   select(1, 2, 10, 12, 14, 16, 18, 20, 24, 8)
 colnames(labor_2021) <- colnames
-labor_2021 %>% 
-  view()
+
 
 labor_2021$geo_name <- labor_2021$geo_name %>% 
   str_remove_all("\\, B\\.C\\.") %>% 
@@ -75,42 +74,34 @@ census <- census %>%
   mutate(
     year = factor(year)
   )
-test <- full_join(census, total_labor, by = c("year", "geo" = "geo_name"))
+test <- right_join(census, total_labor, by = c("year", "geo" = "geo_name")) %>% 
+  select(1, 2, 3, 4, 6, 8, 10, 12, 17, 22, 23, 24)
 
-## add presence of scs site
-load("data/processed/final_scs.rda")
-#total_labor$scs <- 0
-y2011 <- total_labor %>% 
-  filter(year == "2011")
-y2016 <- total_labor %>% 
-  filter(year == "2016")
-y2021 <- total_labor %>% 
-  filter(year == "2021")
-
-scs_city <- distinct(final_scs, city) %>% 
-  pull()
-
-y2021_test <- y2021 %>% 
+## calculate education proportions
+test_total_educ <- test %>% 
+  filter(educ_level == "Total - Highest certificate, diploma or degree")
+test_no_educ <- test %>% 
+  filter(educ_level == "Below High School")
+prop_educ_dat <- bind_cols(test_total_educ, test_no_educ[,9:12]) %>% 
   mutate(
-    scs = ifelse(
-      geo_name %in% scs_city, 1, 0
-    )
-  )
-y2021_test %>% 
-  filter(scs == 1)
-y2011 %>% 
-  filter(geo_name == "Calgary")
-census11_names <- labor_2011 %>% 
-  filter(year == 2011) %>% 
-  distinct(geo_name) %>% 
-  pull()
-test_labor <- total_labor %>% 
-  filter(geo_name %in% census11_names)
-census <- census %>% 
-  mutate(
-  year = factor(year)
-)
+    total_total = `total...9`,
+    total_none = `total...13`,
+    participation_total = `participation_rate...10`,
+    participation_none = `participation_rate...14`,
+    unemployment_total = `unemployment_rate...11`,
+    unemployment_none = `unemployment_rate...15`,
+    prop_educ = total_none/total_total,
+    prop_part = participation_none/participation_total,
+    prop_unemploy = unemployment_none/unemployment_total
+  ) %>% 
+  select(-(9:16))
+save(prop_educ_dat, file = "data/processed/prop_educ_dat.rda")
 
-
-census %>% 
-  filter(scs == 1)
+library(gt)
+its.analysis::itsa.postest(its_model_part)
+res_participation[[2]] %>% 
+  gt()
+res_participation[[3]]
+res_participation[[4]]
+res_participation[[5]]
+res_participation[[6]]

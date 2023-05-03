@@ -1,0 +1,34 @@
+"Labour Force Status (8), Visible Minority (15), Immigrant Status and Period of Immigration (10), Highest Certificate, Diploma or Degree (7), Age Groups (13B) and Sex (3) for the Population Aged 15 Years and Over, in Private Households of Canada, Provinces, Territories, Census Metropolitan Areas and Census Agglomerations, 2011 National Household Survey"
+"Geography = Edmonton"
+"Global non-response rate (GNR) [1] =  25.4 %"
+"Immigrant status and period of immigration (10) = Total - Immigrant status and period of immigration"
+"Highest certificate, diploma or degree (7) =   No certificate, diploma or degree"
+"Age groups (13B) = Total - Age groups"
+"Sex (3) = Total - Sex"
+"Visible minority (15)","Total - Labour force status [2]","  In the labour force","    Employed","    Unemployed","  Not in the labour force","Participation rate","Employment rate","Unemployment rate", 
+"Total - Population by visible minority",163090,79350,71780,7565,83735,48.7,44.0,9.5 
+"  Total visible minority population [3]",33985,15540,14295,1245,18450,45.7,42.1,8.0 
+"    South Asian [4]",7345,2990,2820,170,4355,40.7,38.4,5.7 
+"    Chinese",8575,3320,3145,175,5250,38.7,36.7,5.3 
+"    Black",4645,2280,1890,390,2360,49.1,40.7,17.1 
+"    Filipino",2765,1260,1160,110,1495,45.6,42.0,8.7 
+"    Latin American",1980,1180,1110,70,810,59.6,56.1,5.9 
+"    Arab",2065,1005,960,45,1055,48.7,46.5,4.5 
+"    Southeast Asian [5]",3695,2060,1950,110,1635,55.8,52.8,5.3 
+"    West Asian [6]",870,395,350,45,475,45.4,40.2,11.4 
+"    Korean",365,110,90,0,260,30.1,24.7,0 
+"    Japanese",115,55,50,0,60,47.8,43.5,0 
+"    Visible minority, n.i.e. [7]",390,270,220,0,125,69.2,56.4,0 
+"    Multiple visible minorities [8]",1185,610,545,70,570,51.5,46.0,11.5 
+"  Not a visible minority [9]",129100,63810,57485,6325,65290,49.4,44.5,9.9 
+"Note"
+"[1] For the 2011 National Household Survey (NHS) estimates, the global non-response rate (GNR) is used as an indicator of data quality. This indicator combines complete non-response (household) and partial non-response (question) into a single rate. The value of the GNR is presented to users. A smaller GNR indicates a lower risk of non-response bias and as a result, lower risk of inaccuracy. The threshold used for estimates' suppression is a GNR of 50% or more. For more information, please refer to the National Household Survey User Guide, 2011."
+"[2] In the past, this variable was called Labour force activity."
+"[3] The Employment Equity Act defines visible minorities as 'persons, other than Aboriginal peoples, who are non-Caucasian in race or non-white in colour.'"
+"[4] For example, 'East Indian,' 'Pakistani,' 'Sri Lankan,' etc."
+"[5] For example, 'Vietnamese,' 'Cambodian,' 'Malaysian,' 'Laotian,' etc."
+"[6] For example, 'Iranian,' 'Afghan,' etc."
+"[7] The abbreviation 'n.i.e.' means 'not included elsewhere.' Includes respondents who reported a write-in response such as 'Guyanese,' 'West Indian,' 'Tibetan,' 'Polynesian,' 'Pacific Islander,' etc."
+"[8] Includes respondents who reported more than one visible minority group by checking two or more mark-in circles, e.g., 'Black' and 'South Asian.'"
+"[9] Includes respondents who reported 'Yes' to the Aboriginal identity question (Question 18) as well as respondents who were not considered to be members of a visible minority group."
+"Source: Statistics Canada - 2011 National Household Survey. Catalogue Number 99-012-X2011038."

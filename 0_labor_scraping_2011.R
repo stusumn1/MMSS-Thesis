@@ -61,7 +61,7 @@ for(i in gid) {
 
 ## download each file to new table
   # create new directory
-dir <- here(paste0("temp/"))
+dir <- here(paste0("labor_files/"))
 dir.create(dir)
   # create empty table
 table2 <- tibble("V1" = vector(length = 0, mode = "character"), "V2" = vector(length = 0, mode = "character"), "V3" = vector(length = 0, mode = "character"),
@@ -76,47 +76,47 @@ for(i in 1:168) {
   raw_list <- download.file(url, paste0(dir, "a", gid[i], ".csv"))
 }
   # repeat for each education level
-for(i in 1:168) {
+for(i in 169:336) {
   
   url <- paste0("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/", links[i,])
   raw_list <- download.file(url, paste0(dir, "b", gid[i], ".csv"))
 }
 
-for(i in 1:168) {
+for(i in 337:504) {
   
   url <- paste0("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/", links[i,])
   raw_list <- download.file(url, paste0(dir, "c", gid[i], ".csv"))
 }
 
-for(i in 1:168) {
+for(i in 505:672) {
   
   url <- paste0("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/", links[i,])
   raw_list <- download.file(url, paste0(dir, "d", gid[i], ".csv"))
 }
   # download each csv, extract data to new table
 for(i in 1:168) {
-  output <- read.table(file = paste0("temp/", "a", gid[i], ".csv"), header = F, sep = ",",
+  output <- read.table(file = paste0("labor_files/", "a", gid[i], ".csv"), header = F, sep = ",",
                        col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
 }
   # repeat for each education level
-for(i in 1:168) {
-  output <- read.table(file = paste0("temp/", "b", gid[i], ".csv"), header = F, sep = ",",
+for(i in 169:336) {
+  output <- read.table(file = paste0("labor_files/", "b", gid[i], ".csv"), header = F, sep = ",",
                        col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
 }
 
-for(i in 1:168) {
-  output <- read.table(file = paste0("temp/", "c", gid[i], ".csv"), header = F, sep = ",",
+for(i in 337:504) {
+  output <- read.table(file = paste0("labor_files/", "c", gid[i], ".csv"), header = F, sep = ",",
                        col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
 }
 
-for(i in 1:168) {
-  output <- read.table(file = paste0("temp/", "d", gid[i], ".csv"), header = F, sep = ",",
+for(i in 505:672) {
+  output <- read.table(file = paste0("labor_files/", "d", gid[i], ".csv"), header = F, sep = ",",
                        col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
@@ -142,7 +142,8 @@ colnames <- data.frame("names" = table2_names) %>%
   select(-568, -400, -232, -64) %>% 
   t()
 rownames(colnames) <- 1:668
-# correct flawed names manually ----
+
+## correct flawed names manually ----
 colnames[637] <- "Lloydminster (Alberta part)"
 colnames[470] <- "Lloydminster (Alberta part)"
 colnames[303] <- "Lloydminster (Alberta part)"
@@ -266,3 +267,5 @@ labor_2011 <- labor_2011 %>%
     participation_rate = as.numeric(participation_rate),
     unemployment_rate = as.numeric(unemployment_rate)
   )
+
+save(labor_2011, file = "data/processed/labor_2011.rda")
