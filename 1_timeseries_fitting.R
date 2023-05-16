@@ -82,5 +82,8 @@ res_prop_part
 ggplot(prop_educ_dat_test) +
   geom_histogram(aes(scs))
 
-its_model_prop_educ %>% 
-  gt()
+res_participation[[1]]
+its_model_prop_part[[7]]
+its_model_prop_educ[[7]]
+its_model[[3]]
+

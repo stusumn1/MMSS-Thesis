@@ -1,3 +1,5 @@
+# I should just put this in 00_exploration.R
+
 library(tidyverse)
 library(tidymodels)
 library(themis)

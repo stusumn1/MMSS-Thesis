@@ -11,12 +11,14 @@ library(stringr)
 
 
 ## create table of links to download data for each geo
+  # define urls using different geos and education levels
 url <- "https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/Rp-eng.cfm?TABID=4&LANG=E&A=R&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=01&GL=-1&GID="
 url0 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=0&D3=0&D4=0&D5=0&D6=0"
 url1 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=1&D3=0&D4=0&D5=0&D6=0"
 url2 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=2&D3=0&D4=0&D5=0&D6=0"
 url3 <- "&GK=1&GRP=1&O=D&PID=105611&PRID=0&PTYPE=105277&S=0&SHOWALL=0&SUB=0&Temporal=2013&THEME=96&VID=0&VNAMEE=&VNAMEF=&D1=0&D2=3&D3=0&D4=0&D5=0&D6=0"
 gid <- seq(from = 1118297, to = 1118464)
+  # create empty table to bind rows to
 table <- tibble("gid" = vector(length = 0, mode = "numeric"), "link" = vector(length = 0, mode = "character"))
 
 for(i in gid) {
@@ -268,4 +270,4 @@ labor_2011 <- labor_2011 %>%
     unemployment_rate = as.numeric(unemployment_rate)
   )
 
-save(labor_2011, file = "data/processed/labor_2011.rda")
+#save(labor_2011, file = "data/processed/labor_2011.rda")
