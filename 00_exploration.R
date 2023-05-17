@@ -468,3 +468,107 @@ Encoding(census_2021_og$geo_name) <- "UTF-8"
 namb <- scan(file='/Users/stuartsumner/Downloads/98-401-X2021003_eng_CSV (1)/98-401-X2021003_English_CSV_data.csv', fileEncoding='UTF-8',
              what=character(), sep=',', allowEscapes=T)
 cat(namb)
+
+## family data 2011 and 2016
+family_1116_og <- read_csv("data/raw/family_status_1116_big.csv") %>% 
+  janitor::clean_names()
+
+families_of_interest <- c("Total - Census family structure", "Couple census families with children", "Intact families", "Stepfamilies", "Lone-parent census families")
+
+family_1116_test <- family_1116_og %>% 
+  select(9, 3, 4, 7, 12, 19, 24, 28, 34, 38) %>% 
+  filter(dim_census_family_structure_including_stepfamily_status_9 %in% families_of_interest)
+
+colnames <- c("year", "geo_level", "geo", "csd_type", "family_structure", "child_0_to_5", "both_0_to_5", "one_0_to_5", "all_0_to_5", "some_0_to_5")
+colnames(family_1116_test) <- colnames
+
+family_1116_test <- family_1116_test %>% 
+  mutate(
+    child_0_to_5 = as.numeric(family_1116_test$child_0_to_5),
+    both_0_to_5 = as.numeric(family_1116_test$both_0_to_5),
+    one_0_to_5 = as.numeric(family_1116_test$one_0_to_5),
+    all_0_to_5 = as.numeric(family_1116_test$all_0_to_5),
+    some_0_to_5 = as.numeric(family_1116_test$some_0_to_5)
+  ) %>% 
+  filter(!is.na(child_0_to_5)) %>% 
+  arrange(year)
+
+family_1116_test1 <- family_1116_test %>% 
+  group_by(geo, year, family_structure) %>% 
+  mutate(
+    any_0_to_5 = sum(child_0_to_5, both_0_to_5, one_0_to_5, all_0_to_5, some_0_to_5)
+  )
+
+# remove geos with no census families
+no_good <- family_1116_test1 %>% 
+  filter(family_structure == "Total - Census family structure") %>% 
+  filter(any_0_to_5 == 0) %>% 
+  pull(geo)
+
+family_1116 <- family_1116_test1 %>% 
+  filter(!(geo %in% no_good))
+
+family_1116 %>% 
+  filter(geo %in% geos_21) %>% 
+  view()
+
+family_1116_og %>% 
+  select(12, 15) %>% 
+  view()
+
+## faily data in 2011 and 2016
+family_16_og <- read_csv("data/raw/family_1116_little.csv") %>% 
+  janitor::clean_names()
+
+families_of_interest <- c("Total - Census family structure", "Couple census families with children", "Intact families", "Stepfamilies", "Lone-parent census families")
+
+family_16_test <- family_16_og %>% 
+  filter(dim_sex_3 == "Total - Sex", dim_age_of_child_13 == "0 to 4 years") %>% 
+  select(8, 4, 17, 18, 21)
+colnames <- c("year", "geo", "total", "two_parent", "one_parent")
+colnames(family_16_test) <- colnames
+
+## family data in 2021
+
+family_21_og <- read_csv("data/raw/family_21_big.csv") %>% 
+  janitor::clean_names()
+
+families_of_interest_21 <- c("Total - Children in census families", pull(family_21_og[3,7]), "Living in a one-parent family")
+
+family_21_test <- family_21_og %>% 
+  filter(age_group_10 == "0 to 4 years", gender_3a == "Total - Gender",
+         household_and_family_characteristics_of_persons_including_detailed_information_on_stepfamilies_25 %in% families_of_interest_21) %>% 
+  select(4, 2, 7, 9:26) %>% 
+  select(-starts_with("symbol")) %>% 
+  select(1:4)
+
+colnames(family_21_test) <- c("year", "geo", "family_structure", "total")
+
+family_21_test1 <- family_21_test %>% 
+  pivot_wider(names_from = family_structure, values_from = total) %>% 
+  filter(year == 2021)
+
+colnames(family_21_test1) <- colnames
+family_total <- bind_rows(family_21_test1, family_16_test) %>% 
+  arrange(year) %>% 
+  mutate(
+    prop_two_parent = two_parent/total
+  )
+family_total
+
+geos_21 <- family_21_test %>% 
+  distinct(geo) %>% 
+  pull()
+
+family_1116 %>% 
+  ungroup() %>% 
+  distinct(geo)
+
+## problem with geos overlapping -- 11 and 16 are census subdivisions, 21 is metros and agglomerations
+## check out full dataset (but can't discriminate by age)
+
+family_total_og <- read_csv("data/raw/family_total_big.csv") %>% 
+  janitor::clean_names()
+family_total_test <- family_total_og %>% 
+  filter(census_family_structure_7a %in% c("Total - Census family structure", "Total - Couple families", "Total - One-parent families"))
+
