@@ -7,6 +7,7 @@ library(tictoc)
 library(doMC)
 library(its.analysis)
 library(tictoc)
+library(datawizard)
 
 ## handle common conflicts
 tidymodels_prefer()
@@ -86,4 +87,45 @@ res_participation[[1]]
 its_model_prop_part[[7]]
 its_model_prop_educ[[7]]
 its_model[[3]]
+
+
+## family analysis ----
+  # examine value distribution
+family_census %>% keep(is.numeric) %>% 
+  gather() %>% 
+  ggplot(aes(value)) +
+  facet_wrap( ~ key, scales = "free") +
+  geom_density(color = "blue", fill = "red")
+  # we have serious skew, so let's remove at outliers at .98
+family_census$log10 <- log10(family_census$total_0_to_4)
+family_census_an <- subset(family_census, 
+                           !(family_census$population > quantile(family_census$population, probs = c(.01, .98), na.rm = T)[2] | family_census$population < quantile(family_census$population, probs = c(.01, .98), na.rm = T)[1]),
+                           !(family_census$one_parent > quantile(family_census$one_parent, probs = c(.01, .98), na.rm = T)[2] | family_census$one_parent < quantile(family_census$one_parent, probs = c(.01, .98), na.rm = T)[1]),
+                           !(family_census$land_area > quantile(family_census$land_area, probs = c(.01, .98), na.rm = T)[2] | family_census$land_area < quantile(family_census$land_area, probs = c(.01, .98), na.rm = T)[1]),
+                           !(family_census$married > quantile(family_census$married, probs = c(.01, .98), na.rm = T)[2] | family_census$married < quantile(family_census$married, probs = c(.01, .98), na.rm = T)[1]),
+                           !(family_census$total_0_to_4 > quantile(family_census$total_0_to_4, probs = c(.01, .98), na.rm = T)[2] | family_census$total_0_to_4 < quantile(family_census$total_0_to_4, probs = c(.01, .98), na.rm = T)[1]),
+                           !(family_census$total_private_dwellings > quantile(family_census$total_private_dwellings, probs = c(.01, .98), na.rm = T)[2] | family_census$total_private_dwellings < quantile(family_census$total_private_dwellings, probs = c(.01, .98), na.rm = T)[1]),
+                           !(family_census$two_parent > quantile(family_census$two_parent, probs = c(.01, .98), na.rm = T)[2] | family_census$two_parent < quantile(family_census$two_parent, probs = c(.01, .98), na.rm = T)[1])
+                           )
+
+?lapply
+quantile(family_census$population, na.rm = T, probs = c(.01, .98))[2]
+
+
+family_recipe <- recipe(prop_two_parent ~ ., family_census) %>% 
+  step_rm(geo, population, total_total, total_none, married) %>% 
+  step_normalize(all_numeric_predictors(), -year, -scs) %>%
+  step_impute_knn(all_numeric_predictors()) %>% 
+  step_zv() %>% 
+  prep()
+
+tic.clearlog()
+tic("Two-Parent Families")
+its_model_prop_part <- itsa.model(data = as.data.frame(prop_educ_dat_test), time = "year", depvar = "prop_part", interrupt_var = "scs", bootstrap = TRUE, Reps = 100)
+
+toc(log = TRUE)
+time_log <- tic.log(format = F)
+
+save(prop_educ_dat_part, its_model_prop_part, file = "results/its_prop_part.rda")
+
 

@@ -68,7 +68,7 @@ dir.create(dir)
   # create empty table
 table2 <- tibble("V1" = vector(length = 0, mode = "character"), "V2" = vector(length = 0, mode = "character"), "V3" = vector(length = 0, mode = "character"),
                  "V4" = vector(length = 0, mode = "character"), "V5" = vector(length = 0, mode = "character"), "V6" = vector(length = 0, mode = "character"),
-                 "V7" = vector(length = 0, mode = "character"), "V8" = vector(length = 0, mode = "character"))
+                 "V7" = vector(length = 0, mode = "character"), "V8" = vector(length = 0, mode = "character"), "V9" = vector(length = 0, mode = "character"))
 gid <- table$gid
 links <- table[,2]
   # download each file to new directory
@@ -95,31 +95,32 @@ for(i in 505:672) {
   url <- paste0("https://www12.statcan.gc.ca/nhs-enm/2011/dp-pd/dt-td/", links[i,])
   raw_list <- download.file(url, paste0(dir, "d", gid[i], ".csv"))
 }
+
   # download each csv, extract data to new table
 for(i in 1:168) {
   output <- read.table(file = paste0("labor_files/", "a", gid[i], ".csv"), header = F, sep = ",",
-                       col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
+                       col.names = paste0("V", seq_len(9)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
 }
   # repeat for each education level
 for(i in 169:336) {
   output <- read.table(file = paste0("labor_files/", "b", gid[i], ".csv"), header = F, sep = ",",
-                       col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
+                       col.names = paste0("V", seq_len(9)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
 }
 
 for(i in 337:504) {
   output <- read.table(file = paste0("labor_files/", "c", gid[i], ".csv"), header = F, sep = ",",
-                       col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
+                       col.names = paste0("V", seq_len(9)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
 }
 
 for(i in 505:672) {
   output <- read.table(file = paste0("labor_files/", "d", gid[i], ".csv"), header = F, sep = ",",
-                       col.names = paste0("V", seq_len(8)), fill = TRUE) %>% 
+                       col.names = paste0("V", seq_len(9)), fill = TRUE) %>% 
     slice(2, 8, 10)
   table2 <- bind_rows(table2, output)
 }
@@ -249,12 +250,10 @@ values <- table2 %>%
   # add geo names
 values$V1 <- colnames
   # correct col names
-colnames <- c("geo_name", "total", "in_labor_force", "employed", "unemployed", "not_in_labor_force", "participation_rate", "unemployment_rate")
+colnames <- c("geo", "total", "in_labor_force", "employed", "unemployed", "not_in_labor_force", "participation_rate", "employment_rate", "unemployment_rate")
 
 labor_2011 <- values
 colnames(labor_2011) <- colnames
-#rename(labor_2011, geo_name = `geo_name[,1]`)
-  # not working
 labor_2011$year <-  2011
 labor_2011$educ_level <- c(rep("Total - Highest certificate, diploma or degree", 167), rep("Below High School", 167), rep("High School", 167), rep("Apprenticeship", 167))
 labor_2011 <- labor_2011 %>% 
