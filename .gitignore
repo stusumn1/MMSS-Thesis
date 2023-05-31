@@ -19,6 +19,7 @@ data/raw/labor_2016.csv
 data/raw/labor_2016_big.csv
 data/raw/labor_2021.csv
 data/raw/labor_2021_big.csv
+data/raw/income_1621.csv
 
 # mac related files
 .DS_Store
