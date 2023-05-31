@@ -2,7 +2,6 @@
 
 ## load packages----
 library(tidyverse)
-library(tictoc)
 
 ## tidy 2011 and 2016 family data----
 family_16_og <- read_csv("data/raw/family_1116_little.csv") %>% 
@@ -66,6 +65,8 @@ family_total <- bind_rows(family_21, family_16_test) %>%
 family_total
 
 ## incorporate into larger census data----
-family_census <- left_join(family_total, census, by = c("geo", "year"))
-
-
+family_census <- left_join(census_little, family_total, by = c("geo", "year"))
+#save(family_census, file = "data/processed/family_census_little.rda")
+family_census %>% 
+  filter(is.na(prop_two_parent))
+# need to adjust the names for special characters
