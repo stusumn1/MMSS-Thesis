@@ -47,10 +47,10 @@ labor_anova %>%
 labor_tukey <- TukeyHSD(labor_anova)
 plot(labor_tukey) 
 
-labor_summary <- data.frame(Covariate = c("year", "population % change", "private dwellings", "population density", "average age",  "average household size", "number married \ncouples", "unemployment rate", "unemployment rate*", "total*", "proportion unemployed*", "residual"), unclass(summary(labor_anova)),  # Convert summary to data frame
+labor_summary <- data.frame(Covariate = c("year", "population % change", "private dwellings", "population density", "average age",  "average household size", "number married couples", "unemployment rate", "unemployment rate*", "total*", "proportion unemployed*", "residual"), unclass(summary(labor_anova)),  # Convert summary to data frame
                              check.names = F)
 labor_summary %>% 
-  slice(-1, -10, -12) %>% 
+  slice(-1, -12) %>% 
   gt() %>% 
   gt::cols_hide(c(Df, `Sum Sq`)) %>% 
   gt::fmt_number(columns = 2:5, decimals = 3) %>% 
