@@ -17,17 +17,20 @@ tidymodels_prefer()
 registerDoMC(cores = 8)
 
 ## seed
-set.seed(3013)
+set.seed(4444)
 
 ## family analysis ----
 load("data/processed/family_census_little.rda")
+family_census <- family_census %>% 
+  filter(!is.na(prop_two_parent))
+
 # examine value distribution
 family_census %>% keep(is.numeric) %>% 
   gather() %>% 
   ggplot(aes(value)) +
   facet_wrap( ~ key, scales = "free") +
   geom_density() +
-  theme_minimal() +
+  theme_bw() +
   scale_x_continuous(breaks = NULL)
 
 # we have serious skew, so let's remove at outliers at .98
@@ -42,38 +45,50 @@ family_census_an <- subset(family_census,
                            !(family_census$two_parent > quantile(family_census$two_parent, probs = c(.01, .98), na.rm = T)[2] | family_census$two_parent < quantile(family_census$two_parent, probs = c(.01, .98), na.rm = T)[1])
 ) #need to work through this more
 
-
-family_census %>% 
-  filter(scs == 1) %>%  view()
-quantile(family_census$population, na.rm = T, probs = c(.01, .98))[2]
-skimr::skim(family_census)
+# feature engineering/recipe
 family_recipe <- recipe(prop_two_parent ~ ., family_census) %>% 
-  step_rm(geo) %>% 
-  step_impute_knn(total_0_to_4, two_parent, one_parent, prop_two_parent) %>% 
-  step_log(population, population_density, land_area, married, total_private_dwellings, total_0_to_4, one_parent, two_parent) %>% 
-  step_normalize(population_change, avg_household_size, avg_family_size) %>% 
+  step_rm(geo, population, land_area, avg_family_size, two_parent, one_parent) %>% 
+  step_filter_missing(all_predictors(), threshold = .2) %>% 
+  step_impute_knn(total_0_to_4, prop_two_parent) %>% 
+  step_log(population_density, married, total_private_dwellings, total_0_to_4) %>% 
+  step_normalize(population_change, avg_household_size) %>% 
   step_zv() %>% 
   prep()
 
-test_family <- bake(family_recipe, new_data = NULL)
+## proportion in two-parent families aged 0-4
+family <- bake(family_recipe, new_data = NULL) %>% 
+  mutate(scs = factor(scs))
 
   # see how our recipe does in normalizing distributions
-test_family %>% keep(is.numeric) %>% 
+family %>% keep(is.numeric) %>% 
   gather() %>% 
   ggplot(aes(value)) +
   facet_wrap( ~ key, scales = "free") +
-  geom_density()
+  geom_density() +
+  theme_bw() +
+  scale_x_continuous(breaks = NULL)
 
+
+## proportion in two-parent families aged 0-4
 tic.clearlog()
 tic("Two-Parent Families")
-its_model_prop_two_parent1 <- itsa.model(data = as.data.frame(test_family), time = "year", depvar = "prop_two_parent", interrupt_var = "scs", bootstrap = F)
+family_model <- itsa.model(data = as.data.frame(family), 
+                               time = "year", 
+                               depvar = "prop_two_parent", 
+                               interrupt_var = "scs", 
+                               Reps = 200)
 
 toc(log = TRUE)
 time_log <- tic.log(format = F)
+family_tictoc <- tibble::tibble(
+  model = time_log[[1]]$msg,
+  start_time = time_log[[1]]$tic,
+  end_time = time_log[[1]]$toc,
+  runtime = end_time - start_time
+)
 
-load(file = "results/its_prop_two_parent.rda")
-
-postest_family <- itsa.postest(its_model_prop_two_parent)
-  # better! Heterogeneousness is improving. Still can't get the plots though
-its_model_prop_two_parent[4]
+save(family, family_model, family_tictoc, file = "results/family_res.rda")
+family_postest <- itsa.postest(family_model)
+  # better! Heterogeneity is improving. Still can't get the plots though
+its_model_prop_two_parent[2]
 postest_family[4]

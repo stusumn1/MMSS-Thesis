@@ -16,7 +16,7 @@ tidymodels_prefer()
 registerDoMC(cores = 8)
 
 ## seed
-set.seed(3013)
+set.seed(4444)
 
 ## read in data----
 load("data/processed/census_1121.rda")
@@ -55,9 +55,25 @@ save(its_model_part, file = "results/its_participation.rda")
 save(res_participation, time_log, file = "results/results_part.rda")
 
 ## proportion educated below high school level
-load("data/processed/labor_census_little.rda")
 labor_census <- labor_census %>% 
   filter(!is.na(prop_part_uneduc))
+
+# feature engineering/recipe
+recipe <- recipe(prop_part_uneduc ~ ., labor_census) %>% 
+  step_rm(geo, population, land_area, total, total_uneduc, unemployed_total, unemployed_uneduc, participation_total, participation_uneduc, avg_family_size) %>%
+  step_rm(avg_age, population_change, avg_household_size, married) %>% 
+  step_filter_missing(all_predictors(), threshold = .15) %>% 
+  #step_log(population_density, total_private_dwellings, unemployment_rt_total, unemployment_rt_uneduc, prop_unempl_uneduc) %>% 
+  #step_log(married) %>% 
+  #step_normalize(avg_age, avg_household_size, population_change) %>%
+  step_impute_knn(all_predictors()) %>% 
+  step_corr(all_numeric_predictors(), threshold = .8) %>% 
+  step_nzv() %>% 
+  prep()
+
+## proportion participating in labor force educated below high school 
+part_uneduc_dat <- bake(recipe, new_data = NULL) %>% 
+  mutate(scs = factor(scs))
 
 # examine value distribution
 part_uneduc_dat %>% keep(is.numeric) %>% 
@@ -65,20 +81,9 @@ part_uneduc_dat %>% keep(is.numeric) %>%
   ggplot(aes(value)) +
   facet_wrap( ~ key, scales = "free") +
   geom_density() +
-  theme_minimal() +
+  theme_bw() +
   scale_x_continuous(breaks = NULL)
 
-recipe <- recipe(prop_part_uneduc ~ ., labor_census) %>% 
-  step_rm(geo, land_area, total, total_uneduc, unemployed_total, unemployed_uneduc, participation_total, participation_uneduc) %>% 
-  step_impute_knn(all_numeric_predictors()) %>% 
-  step_log(married, population, population_density, total_private_dwellings, unemployment_rt_total, unemployment_rt_uneduc) %>% 
-  step_normalize(avg_age, avg_family_size, avg_household_size, population_change) %>%
-  step_nzv() %>% 
-  prep()
-
-
-## proportion participating in labor force educated below high school 
-part_uneduc_dat <- bake(recipe, new_data = NULL)
 
 tic.clearlog()
 tic("Proportion Educated Below High School Participating in Labor Force")
@@ -87,7 +92,7 @@ uneduc_part_mod <- itsa.model(data = as.data.frame(part_uneduc_dat),
                               time = "year", 
                               depvar = "prop_part_uneduc", 
                               interrupt_var = "scs", 
-                              covariates = "population_change", 
+                              covariates = "prop_uneduc", 
                               Reps = 200)
 
 toc(log = TRUE)
@@ -101,15 +106,17 @@ uneduc_part_tictoc <- tibble::tibble(
 )
 
 uneduc_part_res <- itsa.postest(uneduc_part_mod)
-uneduc_part_res[[2]]
+uneduc_part_mod[[2]]
 
-save(uneduc_part_tictoc, uneduc_part_mod, uneduc_part_res, file = "results/prop_part_uneduc.rda")
+save(part_uneduc_dat, uneduc_part_tictoc, uneduc_part_mod, uneduc_part_res, file = "results/prop_part_uneduc.rda")
 
   # -.035%, p = .064. Should add covariates of prop_uneduc
   # added covariates prop_uneduc, resulted in p-value .3
   # added covariate population_change, worked better
     # p = .076
 
-ggplot(part_uneduc_dat) +
-  geom_point(aes(prop_uneduc, prop_part_uneduc, size = factor(scs), color = factor(scs)), alpha = .7) +
-  theme_minimal()
+  # add change in participation rate, use that as dependent variable
+  # ambiguity on high school education being incorporated or not
+  # remove prop_unempl_uneduc from anova, covered by prop_uneduc
+  # add interactions to anova
+  # the recipe results in 0's for participation rates. When we log, they become -Inf
